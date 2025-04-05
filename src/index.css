@@ -1,0 +1,155 @@
+@import "tailwindcss";
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  
+  .App {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1, h2 {
+    text-align: center;
+    color: #555;
+  }
+  
+  .input-section,
+  .caption-section,
+  .video-section {
+    margin-bottom: 25px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .input-group {
+    margin-bottom: 15px;
+  }
+  
+  .input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .input-group input[type="url"],
+  .input-group input[type="text"],
+  .input-group input[type="number"] {
+    width: calc(100% - 22px); /* Account for padding/border */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .input-group input[type="number"] {
+     width: 80px; /* Smaller width for time inputs */
+     margin-right: 10px;
+  }
+  
+  
+  button {
+    padding: 10px 18px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.2s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+  
+  .video-container {
+    position: relative;
+    width: 100%;
+    max-width: 640px; /* Or desired max video width */
+    margin: 0 auto; /* Center the video */
+    background-color: #000; /* Black background for letterboxing */
+  }
+  
+  .video-container video {
+    display: block; /* Remove extra space below video */
+    width: 100%;
+    height: auto;
+  }
+  
+  .caption-overlay {
+    position: absolute;
+    bottom: 10%; /* Position captions higher than default controls */
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 8px 15px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-size: 1.2em;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.3s ease;
+    pointer-events: none; /* Allow clicks to go through to video */
+    box-sizing: border-box; /* Include padding in width */
+  }
+  
+  .caption-overlay.visible {
+    opacity: 1;
+  }
+  
+  .caption-list ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .caption-list li {
+    background-color: #eee;
+    margin-bottom: 8px;
+    padding: 10px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .caption-list .time {
+    font-style: italic;
+    color: #666;
+    font-size: 0.9em;
+    margin-right: 15px;
+    white-space: nowrap;
+  }
+  
+  .caption-list .text {
+   flex-grow: 1;
+   margin-right: 10px;
+  }
+  
+  .caption-list button {
+    background-color: #dc3545;
+    padding: 5px 10px;
+    font-size: 0.9em;
+  }
+  .caption-list button:hover {
+    background-color: #c82333;
+  }
+  
+  .error-message {
+      color: #dc3545;
+      font-weight: bold;
+      margin-top: 10px;
+  }
